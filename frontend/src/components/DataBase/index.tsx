@@ -1,4 +1,4 @@
-function DataBase() {
+const DataBase = () =>{
     return (
         <div className="table-responsive">
         <table className="table table-striped table-sm">
