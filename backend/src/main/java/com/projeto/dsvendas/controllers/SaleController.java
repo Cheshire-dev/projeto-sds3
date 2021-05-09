@@ -1,5 +1,8 @@
 package com.projeto.dsvendas.controllers;
 
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -9,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.projeto.dsvendas.dto.SaleDTO;
+import com.projeto.dsvendas.dto.SaleSumDTO;
 import com.projeto.dsvendas.service.SaleService;
 
 @RestController
@@ -23,4 +27,11 @@ public class SaleController {
 		Page<SaleDTO> list = service.findAll(pageable);
 		return ResponseEntity.ok(list);
 	}
+	
+	@GetMapping(value = "/sum-by-seller")
+	public ResponseEntity<List<SaleSumDTO>> amountGrupBySeller(){
+		List<SaleSumDTO> list = service.amountGrupBySeller();
+		return ResponseEntity.ok(list);
+	}
+	
 }
