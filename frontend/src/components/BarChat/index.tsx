@@ -3,7 +3,7 @@ import Chart from 'react-apexcharts';
 const BarChart = () =>{
     
     const options = {
-        plotOptions: {
+        plotOptions: {  
             bar: {
                 horizontal: true,
             }
